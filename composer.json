@@ -15,5 +15,5 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": { "SinSquare\\Knp\\": "src/Sins/Knp" }
-    },
+    }
 }

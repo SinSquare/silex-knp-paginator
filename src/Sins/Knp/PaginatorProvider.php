@@ -1,6 +1,6 @@
 <?php
 
-namespace Silex\Knp;
+namespace SinSquare\Knp;
 
 use Knp\Bundle\PaginatorBundle\Helper\Processor;
 use Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber;
@@ -17,10 +17,7 @@ use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Symfony\Component\HttpKernel\KernelEvents;
 
-/**
- * Class PaginatorProvider
- * @package Silex\Knp
- */
+
 class PaginatorProvider implements ServiceProviderInterface, BootableProviderInterface
 {
     public function register(Container $app)
@@ -43,7 +40,7 @@ class PaginatorProvider implements ServiceProviderInterface, BootableProviderInt
             return $twig;
         });
 
-        $app['knp_paginator.path'] = realpath(__DIR__ . '/../../../../../') . '/vendor/knplabs/knp-paginator-bundle';
+        $app['knp_paginator.path'] = realpath(__DIR__ . '/../../../../../../') . '/vendor/knplabs/knp-paginator-bundle';
         $app['knp_paginator.limits'] = [2, 5, 10, 25, 50, 100, 200, 500];
         $app['knp_paginator.options'] = [];
         $app['knp_paginator.options_fixer'] = function () use ($app) {
@@ -125,9 +122,6 @@ class PaginatorProvider implements ServiceProviderInterface, BootableProviderInt
         };
     }
 
-    /**
-     * @param Application $app
-     */
     public function boot(Application $app)
     {
         $app['dispatcher']->addSubscriber($app['knp_paginator.pagination_subscriber']);

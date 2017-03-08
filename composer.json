@@ -1,28 +1,19 @@
 {
-    "name": "vinyvicente/silex-knp-paginator",
-    "description": "Paginator Provider to Silex 2.0",
+    "name": "sinsquare/silex-knp-paginator",
+    "description": "KNP Paginator Provider to Silex 2.0",
     "type": "library",
     "require": {
         "php": ">=5.6",
-        "twig/twig": "^2.0",
+        "twig/twig": "~1.28|~2.0",
         "silex/silex": "^2.0",
-        "knplabs/knp-paginator-bundle": "^2.5",
-        "symfony/translation": "^3.2",
-        "symfony/twig-bridge": "^3.2",
-        "twig/extensions": "^1.4"
+        "knplabs/knp-paginator-bundle": "~2.5",
+        "symfony/translation": "~2.8|~3.0",
+        "symfony/twig-bridge": "~2.8|~3.0",
+        "twig/extensions": "~1.4"
     },
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Vinicius",
-            "email": "vinyvicente@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "minimum-stability": "stable",
     "autoload": {
-      "psr-4": {
-        "Silex\\": "src/"
-      }
-    }
+        "psr-4": { "SinSquare\\Knp\\": "src/Sins/Knp" }
+    },
 }

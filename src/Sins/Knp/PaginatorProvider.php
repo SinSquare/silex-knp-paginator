@@ -22,14 +22,13 @@ class PaginatorProvider implements ServiceProviderInterface, BootableProviderInt
 {
     public function register(Container $app)
     {
-        $app['locale'] = 'en';
 
         if (!isset($app['twig'])) {
-            $app->register(new TwigServiceProvider());
+            throw new \LogicException('You must register the TwigServiceProvider to use the PaginatorProvider');
         }
 
         if (!isset($app['translator'])) {
-            $app->register(new TranslationServiceProvider());
+            throw new \LogicException('You must register the TranslationServiceProvider to use the PaginatorProvider');
         }
 
         $app['twig'] = $app->extend('twig', function (\Twig_Environment $twig) use ($app) {
